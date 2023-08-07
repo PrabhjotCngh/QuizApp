@@ -18,18 +18,18 @@ struct QuizListView: View {
         NavigationView {
             List(quizListVM.quizes) { quiz in
                 NavigationLink() {
-                    
+                    QuestionListView(quiz: quiz, quizSubmission: QuizSubmission(quizId: quiz.quizId))
                 } label: {
                     Text(quiz.title)
                 }
-            }
+            }//: List
             .accessibilityIdentifier("quizList")
             .onAppear {
                 quizListVM.populateAllQuizes()
             }
             .navigationTitle("Quizes")
             .navigationBarTitleDisplayMode(.inline)
-        }
+        }//: NavigationView
     }
 }
 

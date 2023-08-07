@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct QuestionViewModel: Identifiable {
+struct QuestionListViewModel: Identifiable {
     
     var id: Int {
         question.questionId

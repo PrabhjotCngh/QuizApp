@@ -17,20 +17,17 @@ class QuizListViewModel: ObservableObject {
     }
     
     func populateAllQuizes() {
-        
         webserviceProtocol.getAllQuizes(url: Constants.Urls.allQuizes) { result in
             switch result {
-                case .success(let quizesDTO):
-                    DispatchQueue.main.async {
-                        self.quizes = quizesDTO.map(QuizViewModel.init)
-                    }
-                case .failure(let error):
-                    print(error)
+            case .success(let quizesDTO):
+                DispatchQueue.main.async {
+                    self.quizes = quizesDTO.map(QuizViewModel.init)
+                }
+            case .failure(let error):
+                print(error)
             }
         }
-        
     }
-    
 }
 
 struct QuizViewModel: Identifiable, Hashable {
@@ -42,7 +39,6 @@ struct QuizViewModel: Identifiable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(quizId)
     }
-    
     
     let id = UUID()
     
@@ -60,8 +56,7 @@ struct QuizViewModel: Identifiable, Hashable {
         quiz.title
     }
     
-    var questions: [QuestionViewModel] {
-        quiz.questions.map(QuestionViewModel.init)
+    var questions: [QuestionListViewModel] {
+        quiz.questions.map(QuestionListViewModel.init)
     }
-    
 }
