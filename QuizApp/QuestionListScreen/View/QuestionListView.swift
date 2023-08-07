@@ -57,7 +57,9 @@ struct QuestionListView: View {
                 .accessibility(identifier: "messageText")
             
             NavigationLink {
-                
+                if gradeQuiz {
+                    QuizGradeScreen(submission: quizSubmission, quiz: quiz)
+                }
             } label: {
                 Button("Submit") {
                     if isSubmissionValid() {
