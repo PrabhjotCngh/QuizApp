@@ -28,6 +28,7 @@
 		8D8986C82A810C26002F7AC0 /* QuizGradeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986C72A810C26002F7AC0 /* QuizGradeScreen.swift */; };
 		8D8986CB2A810C84002F7AC0 /* QuizGradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986CA2A810C84002F7AC0 /* QuizGradeViewModel.swift */; };
 		8D8986CD2A810D07002F7AC0 /* RootPresentationModeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986CC2A810D07002F7AC0 /* RootPresentationModeKey.swift */; };
+		8D8986D12A811002002F7AC0 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986D02A811002002F7AC0 /* Quiz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		8D8986C72A810C26002F7AC0 /* QuizGradeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGradeScreen.swift; sourceTree = "<group>"; };
 		8D8986CA2A810C84002F7AC0 /* QuizGradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGradeViewModel.swift; sourceTree = "<group>"; };
 		8D8986CC2A810D07002F7AC0 /* RootPresentationModeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationModeKey.swift; sourceTree = "<group>"; };
+		8D8986D02A811002002F7AC0 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				8D8986C02A810868002F7AC0 /* View */,
 				8D8986C12A81086F002F7AC0 /* ViewModel */,
+				8D8986CF2A810FF1002F7AC0 /* Model */,
 				8D8986C22A81087A002F7AC0 /* DTO */,
 			);
 			path = QuizListScreen;
@@ -287,6 +290,14 @@
 				8D8986792A810066002F7AC0 /* QuizAppApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		8D8986CF2A810FF1002F7AC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D8986D02A811002002F7AC0 /* Quiz.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +445,7 @@
 				8D8986AE2A81036D002F7AC0 /* WebserviceProtocol.swift in Sources */,
 				8D89867A2A810066002F7AC0 /* QuizAppApp.swift in Sources */,
 				8D8986B02A8103FC002F7AC0 /* Constants.swift in Sources */,
+				8D8986D12A811002002F7AC0 /* Quiz.swift in Sources */,
 				8D8986BA2A8107D6002F7AC0 /* QuizSubmission.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
