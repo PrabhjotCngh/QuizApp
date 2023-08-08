@@ -46,3 +46,24 @@ class when_user_taps_on_a_quiz: XCTestCase {
     }
 }
 
+class when_user_submit_quiz_without_answering_all_questions: XCTestCase {
+    private var app: XCUIApplication!
+    
+    override func setUpWithError() throws {
+        app = XCUIApplication()
+        app.launchEnvironment = ["ENV": "TEST"]
+        continueAfterFailure = false
+        app.launch()
+    }
+    
+    func test_should_display_error_message_on_the_screen() {
+        let quizList = app.tables["quizList"]
+        quizList.cells["Math 101"].tap()
+        
+        let _ = app.buttons["submitQuizButton"].waitForExistence(timeout: 2.0)
+        app.buttons["submitQuizButton"].tap()
+        
+        XCTAssertEqual(Constants.Messages.quizSubmissonFailed, app.staticTexts["messageText"].label)
+    }
+    
+}
