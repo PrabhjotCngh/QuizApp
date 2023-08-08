@@ -12,7 +12,7 @@ class NetworkServiceFactory {
     static func create() -> WebserviceProtocol {
         let environment = ProcessInfo.processInfo.environment["ENV"]
         if let environment, environment == "TEST" {
-            return Webservice()
+            return MockNetworkService()
         }
         return Webservice()
     }

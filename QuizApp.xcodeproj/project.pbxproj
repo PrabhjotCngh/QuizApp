@@ -29,6 +29,16 @@
 		8D8986CB2A810C84002F7AC0 /* QuizGradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986CA2A810C84002F7AC0 /* QuizGradeViewModel.swift */; };
 		8D8986CD2A810D07002F7AC0 /* RootPresentationModeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986CC2A810D07002F7AC0 /* RootPresentationModeKey.swift */; };
 		8D8986D12A811002002F7AC0 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986D02A811002002F7AC0 /* Quiz.swift */; };
+		8D8986D42A825DD2002F7AC0 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986D32A825DD2002F7AC0 /* MockNetworkService.swift */; };
+		8D8986D52A825DD2002F7AC0 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986D32A825DD2002F7AC0 /* MockNetworkService.swift */; };
+		8D8986D62A825E3B002F7AC0 /* NetworkServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986B42A810468002F7AC0 /* NetworkServiceFactory.swift */; };
+		8D8986D72A825E9D002F7AC0 /* QuizDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986A62A8102E4002F7AC0 /* QuizDTO.swift */; };
+		8D8986D82A825EF6002F7AC0 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986AB2A81035D002F7AC0 /* Webservice.swift */; };
+		8D8986D92A825EFA002F7AC0 /* WebserviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986AD2A81036D002F7AC0 /* WebserviceProtocol.swift */; };
+		8D8986DA2A825F08002F7AC0 /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986BC2A81081E002F7AC0 /* QuizData.swift */; };
+		8D8986DB2A825F36002F7AC0 /* QuizListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986A82A81031C002F7AC0 /* QuizListViewModel.swift */; };
+		8D8986DC2A825F59002F7AC0 /* QuestionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986A42A8102AE002F7AC0 /* QuestionListViewModel.swift */; };
+		8D8986DD2A825F68002F7AC0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8986AF2A8103FC002F7AC0 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +84,7 @@
 		8D8986CA2A810C84002F7AC0 /* QuizGradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGradeViewModel.swift; sourceTree = "<group>"; };
 		8D8986CC2A810D07002F7AC0 /* RootPresentationModeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationModeKey.swift; sourceTree = "<group>"; };
 		8D8986D02A811002002F7AC0 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		8D8986D32A825DD2002F7AC0 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +167,7 @@
 		8D8986932A81006A002F7AC0 /* QuizAppUITests */ = {
 			isa = PBXGroup;
 			children = (
+				8D8986D22A825DB1002F7AC0 /* Mocks */,
 				8D8986942A81006A002F7AC0 /* QuizAppUITests.swift */,
 				8D8986962A81006A002F7AC0 /* QuizAppUITestsLaunchTests.swift */,
 			);
@@ -298,6 +310,14 @@
 				8D8986D02A811002002F7AC0 /* Quiz.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8D8986D22A825DB1002F7AC0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8D8986D32A825DD2002F7AC0 /* MockNetworkService.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +463,7 @@
 				8D8986A92A81031C002F7AC0 /* QuizListViewModel.swift in Sources */,
 				8D8986B82A810768002F7AC0 /* QuestionListView.swift in Sources */,
 				8D8986AE2A81036D002F7AC0 /* WebserviceProtocol.swift in Sources */,
+				8D8986D42A825DD2002F7AC0 /* MockNetworkService.swift in Sources */,
 				8D89867A2A810066002F7AC0 /* QuizAppApp.swift in Sources */,
 				8D8986B02A8103FC002F7AC0 /* Constants.swift in Sources */,
 				8D8986D12A811002002F7AC0 /* Quiz.swift in Sources */,
@@ -462,7 +483,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D8986D52A825DD2002F7AC0 /* MockNetworkService.swift in Sources */,
+				8D8986DD2A825F68002F7AC0 /* Constants.swift in Sources */,
+				8D8986D62A825E3B002F7AC0 /* NetworkServiceFactory.swift in Sources */,
+				8D8986DB2A825F36002F7AC0 /* QuizListViewModel.swift in Sources */,
+				8D8986D82A825EF6002F7AC0 /* Webservice.swift in Sources */,
+				8D8986DC2A825F59002F7AC0 /* QuestionListViewModel.swift in Sources */,
 				8D8986952A81006A002F7AC0 /* QuizAppUITests.swift in Sources */,
+				8D8986DA2A825F08002F7AC0 /* QuizData.swift in Sources */,
+				8D8986D72A825E9D002F7AC0 /* QuizDTO.swift in Sources */,
+				8D8986D92A825EFA002F7AC0 /* WebserviceProtocol.swift in Sources */,
 				8D8986972A81006A002F7AC0 /* QuizAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
