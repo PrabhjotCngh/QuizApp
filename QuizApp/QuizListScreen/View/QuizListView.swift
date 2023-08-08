@@ -9,7 +9,6 @@ import SwiftUI
 
 struct QuizListView: View {
     //MARK: - Properties
-    @State private var isActive: Bool = false
     @StateObject private var quizListVM = QuizListViewModel(webserviceProtocol: NetworkServiceFactory.create())
     @State private var selectedQuiz: QuizViewModel?
     
@@ -30,6 +29,7 @@ struct QuizListView: View {
             .navigationTitle("Quizes")
             .navigationBarTitleDisplayMode(.inline)
         }//: NavigationView
+        .environment(\.rootPresentationMode, $selectedQuiz)
     }
 }
 

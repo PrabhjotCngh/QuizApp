@@ -10,27 +10,69 @@ import XCTest
 
 final class QuizAppTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_should_make_sure_quiz_total_points_are_calculated_correctly() {
+        let quizesDTOs = QuizData.loadQuizDTOs()
+        let quizes = quizesDTOs.map(Quiz.init)
+        
+        let mathQuiz = quizes.first {
+            $0.quizId == 1
+        }!
+        
+        XCTAssertEqual(3, mathQuiz.questions.count)
+        XCTAssertEqual(30, mathQuiz.totalPoints)
     }
+}
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+class when_calculate_student_grade: XCTestCase {
+    
+    lazy var gradeASubmission: QuizSubmission = {
+        
+        var userSubmission = QuizSubmission(quizId: 1)
+        userSubmission.addChoice(questionId: 1, choiceId: 2)
+        userSubmission.addChoice(questionId: 2, choiceId: 3)
+        userSubmission.addChoice(questionId: 3, choiceId: 4)
+        return userSubmission
+    }()
+    
+    lazy var gradeBSubmission: QuizSubmission = {
+        var userSubmission = QuizSubmission(quizId: 1)
+        userSubmission.addChoice(questionId: 1, choiceId: 1)
+        userSubmission.addChoice(questionId: 2, choiceId: 3)
+        userSubmission.addChoice(questionId: 3, choiceId: 4)
+        return userSubmission
+    }()
+    
+    lazy var gradeFSubmission: QuizSubmission = {
+        var userSubmission = QuizSubmission(quizId: 1)
+        userSubmission.addChoice(questionId: 1, choiceId: 4)
+        userSubmission.addChoice(questionId: 2, choiceId: 2)
+        userSubmission.addChoice(questionId: 3, choiceId: 1)
+        return userSubmission
+    }()
+    
+    func test_calculate_grade_successfully_based_on_student_score() {
+        let quizesDTOs = QuizData.loadQuizDTOs()
+        let quizes = quizesDTOs.map(Quiz.init)
+        
+        let mathQuiz = quizes.first {
+            $0.quizId == 1
+        }!
+        
+        XCTAssertEqual("A", mathQuiz.calculateLetterGrade(score: 90))
+        XCTAssertEqual("B", mathQuiz.calculateLetterGrade(score: 72))
+        XCTAssertEqual("F", mathQuiz.calculateLetterGrade(score: 42))
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_calculate_grade_based_on_student_submission() {
+        let quizesDTO = QuizData.loadQuizDTOs()
+        let quizes = quizesDTO.map(Quiz.init)
+        
+        let mathQuiz = quizes.first {
+            $0.quizId == 1
+        }!
+        
+        XCTAssertEqual("A", mathQuiz.grade(submission: gradeASubmission).letter)
+        XCTAssertEqual("B", mathQuiz.grade(submission: gradeBSubmission).letter)
+        XCTAssertEqual("F", mathQuiz.grade(submission: gradeFSubmission).letter)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
